@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { getResultImageUrl } from '../api/imageRagApi'
 
 const Card = styled.li`
   display: flex;
@@ -46,7 +45,7 @@ function ResultCard({ result }) {
 
   return (
     <Card>
-      <Thumb src={getResultImageUrl(dish_name, image_path)} alt={dish_name} loading="lazy" />
+      <Thumb src={image_path} alt={dish_name} loading="lazy" />
       <Info>
         <DishName>{dish_name}</DishName>
         <Similarity>유사도 {Math.round(similarity * 100)}%</Similarity>
