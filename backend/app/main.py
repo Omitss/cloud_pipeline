@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from app.auth.web import router as auth_router
 from app.imageRag import service
 from app.imageRag.web import router as imagerag_router
 
@@ -21,3 +22,4 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="imageRag API", lifespan=lifespan)
 
 app.include_router(imagerag_router)
+app.include_router(auth_router)

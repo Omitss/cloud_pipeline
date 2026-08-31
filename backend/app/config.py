@@ -17,6 +17,23 @@ class Settings:
     AWS_ACCESS_KEY_ID: str | None = os.getenv("AWS_ACCESS_KEY_ID") or None
     AWS_SECRET_ACCESS_KEY: str | None = os.getenv("AWS_SECRET_ACCESS_KEY") or None
 
+    # ===== Postgres RDS (회원 데이터) =====
+    DB_HOST: str = os.getenv("DB_HOST", "mybd.cd8iswsign2n.ap-northeast-2.rds.amazonaws.com")
+    DB_PORT: int = int(os.getenv("DB_PORT", "5432"))
+    DB_NAME: str = os.getenv("DB_NAME", "mydb")
+    DB_USER: str = os.getenv("DB_USER", "postgres")
+    DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")  # .env에서만 주입, 기본값 없음
+
+    # ===== Redis (refresh token 저장) =====
+    REDIS_HOST: str = os.getenv("REDIS_HOST", "redis")  # docker-compose 서비스명
+    REDIS_PORT: int = int(os.getenv("REDIS_PORT", "6379"))
+
+    # ===== JWT =====
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "")  # .env에서만 주입, 기본값 없음
+    JWT_ALGORITHM: str = os.getenv("JWT_ALGORITHM", "HS256")
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
+    REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "14"))
+
 
 settings = Settings()
 

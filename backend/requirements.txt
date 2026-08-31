@@ -5,4 +5,10 @@ openai
 numpy
 python-dotenv
 pydantic
+email-validator
 boto3
+sqlalchemy
+psycopg2-binary
+pyjwt
+bcrypt
+redis
