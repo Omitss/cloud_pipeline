@@ -20,7 +20,7 @@ class Settings:
     # ===== Postgres RDS (회원 데이터) =====
     DB_HOST: str = os.getenv("DB_HOST", "mybd.cd8iswsign2n.ap-northeast-2.rds.amazonaws.com")
     DB_PORT: int = int(os.getenv("DB_PORT", "5432"))
-    DB_NAME: str = os.getenv("DB_NAME", "mydb")
+    DB_NAME: str = os.getenv("DB_NAME", "mybd")
     DB_USER: str = os.getenv("DB_USER", "postgres")
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")  # .env에서만 주입, 기본값 없음
 
